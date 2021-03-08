@@ -4,21 +4,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace print_1_to_n
+namespace duplicate
 {
     class Program
     {
-
-        static void Main(string[] args)
+        static void Main()
         {
-            int n;
-            Console.Write("Number :");
-            n = Convert.ToInt32(Console.ReadLine());
-            for (int i = 1; i <= n; i++)
+            int[] arr = new int[10] { 1, 1, 1, 2, 2, 4, 4, 6, 7, 8 };
+            int i, j, count = 0;
+
+
+
+            for (i = 0; i < 10; i++)
             {
-                Console.WriteLine(i);
+                for (j = i + 1; j < 10; j++)
+                {
+
+                    if (arr[i] == arr[j])
+                    {
+                        count++;
+                        break;
+                    }
+                }
             }
-            Console.ReadKey();
+
+            Console.WriteLine("\n Total number of duplicate elements found in array:" + count);
+            Console.ReadLine();
         }
+
     }
-}
