@@ -4,32 +4,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace duplicate
+namespace copyarrayelement
 {
     class Program
     {
-        static void Main()
+        public static void Main()
         {
-            int[] arr = new int[10] { 1, 1, 1, 2, 2, 4, 4, 6, 7, 8 };
-            int i, j, count = 0;
+            int[] arr1 = new int[5] { 1, 2, 3, 4, 5 };
+            int[] arr2 = new int[5];
+            int i;
 
-
-
-            for (i = 0; i < 10; i++)
+            for (i = 0; i < 5; i++)
             {
-                for (j = i + 1; j < 10; j++)
-                {
-
-                    if (arr[i] == arr[j])
-                    {
-                        count++;
-                        break;
-                    }
-                }
+                arr2[i] = arr1[i];
             }
 
-            Console.WriteLine("\n Total number of duplicate elements found in array:" + count);
-            Console.ReadLine();
-        }
 
+            Console.Write("\nThe elements stored in the first array are :\n");
+            for (i = 0; i < 5; i++)
+            {
+                Console.Write("{0}  ", arr1[i]);
+            }
+
+
+            Console.Write("\n\nThe elements copied into the second array are :\n");
+            for (i = 0; i < 5; i++)
+            {
+                Console.Write("{0}  ", arr2[i]);
+            }
+            Console.Write("\n\n");
+        }
     }
